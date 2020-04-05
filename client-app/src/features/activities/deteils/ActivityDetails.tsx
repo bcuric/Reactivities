@@ -27,7 +27,11 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
     loadActivity(match.params.id);
   }, [loadActivity, match.params.id]);
 
-  if (loadingInitial || !activity) return <LoadingComponent content='Loading activity...' />
+  if (loadingInitial) return <LoadingComponent content='Loading activity...' />
+
+  if(!activity){
+    return (<h1>Activity not found</h1>)
+  }
 
   return (
     <Grid>
