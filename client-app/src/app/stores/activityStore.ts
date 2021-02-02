@@ -1,4 +1,4 @@
-import { observable, action, computed, runInAction, values } from 'mobx';
+import { observable, action, computed, runInAction } from 'mobx';
 import { SyntheticEvent } from 'react';
 import { IActivity } from '../models/activity';
 import agent from '../api/agent';
@@ -49,7 +49,7 @@ export default class ActivityStore {
     })
 
     this.hubConnection.on('Send', message => {
-      toast.info(message);
+      // toast.info(message);
     })
   };
 
